@@ -16,17 +16,47 @@ var Car = /** @class */ (function () {
     function Car(plate, seaters, brand, colour, carburant) {
         var _this = this;
         this.generateCar = function () {
-            console.log("La marque de ma voiture est : " + _this.brand);
-            console.log("Il y a  " + _this.seaters + " de passagers");
-            console.log("La plaque de ma voiture est : " + _this.plate);
-            console.log("Ma voiture est : " + _this.colour);
-            console.log("Ma voiture est : " + _this.carburant);
+            console.log("La marque de ma voiture est : " + _this._brand);
+            console.log("Il y a " + _this._seaters + " passagers");
+            console.log("La plaque de ma voiture est : " + _this._plate);
+            console.log("Ma voiture est : " + _this._colour);
+            console.log("Ma voiture est : " + _this._carburant);
         };
-        this.plate = plate;
-        this.seaters = seaters;
-        this.brand = brand;
-        this.colour = colour;
-        this.carburant = carburant;
+        this.setPlate = function (plate) {
+            _this._plate = plate;
+        };
+        this.setSeaters = function (seaters) {
+            _this._seaters = seaters;
+        };
+        this.setBrand = function (brand) {
+            _this._brand = brand;
+        };
+        this.setColour = function (colour) {
+            _this._colour = colour;
+        };
+        this.setCarburant = function (carburant) {
+            _this._carburant = carburant;
+        };
+        this.getPlate = function () {
+            return _this._plate;
+        };
+        this.getSeaters = function () {
+            return _this._seaters;
+        };
+        this.getBrand = function () {
+            return _this._brand;
+        };
+        this.getColour = function () {
+            return _this._colour;
+        };
+        this.getCarburant = function () {
+            return _this._carburant;
+        };
+        this._plate = plate;
+        this._seaters = seaters;
+        this._brand = brand;
+        this._colour = colour;
+        this._carburant = carburant;
     }
     return Car;
 }());
@@ -59,11 +89,6 @@ var pedalCar = /** @class */ (function (_super) {
     return pedalCar;
 }(Car));
 var electric = new electricCar("AA-000-BB", 3, "Mercedes", "Noir Mat", "Electrique");
-var fuel = new fuelCar("FF-666-BB", 3, "Renault", "Orange", "Essence");
-var diesel = new dieselCar("ZZ-123-VV", 3, "Peugeot", "Marron", "Disel");
-var pedal = new pedalCar("JJ-258-HJ", 3, "BMW", "Gris", "Pedale");
 electric.generateCar();
-fuel.generateCar();
-diesel.generateCar();
-pedal.generateCar();
+electric.getBrand();
 //# sourceMappingURL=test.js.map

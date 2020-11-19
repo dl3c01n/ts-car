@@ -1,40 +1,56 @@
 class Car {
-    private plate : string;
-    private seaters: number;
-    private brand: string;
-    private colour: string;
-    private carburant: string;
+    private _plate : string;
+    private _seaters: number;
+    private _brand: string;
+    private _colour: string;
+    private _carburant: string;
 
     constructor(plate: string, seaters: number, brand: string, colour: string, carburant: string){
-        this.plate = plate;
-        this.seaters = seaters;
-        this.brand = brand;
-        this.colour = colour;
-        this.carburant = carburant;
+        this._plate = plate;
+        this._seaters = seaters;
+        this._brand = brand;
+        this._colour = colour;
+        this._carburant = carburant;
     }
 
     public generateCar = () :void => {
-        console.log(`La marque de ma voiture est : ${this.brand}`)
-        console.log(`Il y a  ${this.seaters} de passagers`)
-        console.log(`La plaque de ma voiture est : ${this.plate}`)
-        console.log(`Ma voiture est : ${this.colour}`)
-        console.log(`Ma voiture est : ${this.carburant}`)
+        console.log(`La marque de ma voiture est : ${this._brand}`)
+        console.log(`Il y a ${this._seaters} passagers`)
+        console.log(`La plaque de ma voiture est : ${this._plate}`)
+        console.log(`Ma voiture est : ${this._colour}`)
+        console.log(`Ma voiture est : ${this._carburant}`)
     } 
 
     public setPlate = (plate: string) => {
-        this.plate = plate
+        this._plate = plate
     }
     public setSeaters = (seaters: number) => {
-        this.seaters = seaters
+        this._seaters = seaters
     }
     public setBrand = (brand: string) => {
-        this.brand = brand
+        this._brand = brand
     }
     public setColour = (colour: string) => {
-        this.colour = colour
+        this._colour = colour
     }
     public setCarburant = (carburant: string) => {
-        this.carburant = carburant
+        this._carburant = carburant
+    }
+
+    public getPlate = () :string => {
+        return this._plate;
+    }
+    public getSeaters = () :number => {
+        return this._seaters;
+    }
+    public getBrand = () :string => {
+        return this._brand;
+    }
+    public getColour = () :string => {
+        return this._colour;
+    }
+    public getCarburant = () :string => {
+        return this._carburant;
     }
 }
 
@@ -63,11 +79,6 @@ class pedalCar extends Car {
 }
 
 let electric = new electricCar("AA-000-BB", 3, "Mercedes", "Noir Mat", "Electrique") 
-let fuel = new fuelCar("FF-666-BB", 3, "Renault", "Orange", "Essence") 
-let diesel = new dieselCar("ZZ-123-VV", 3, "Peugeot", "Marron", "Disel") 
-let pedal = new pedalCar("JJ-258-HJ", 3, "BMW", "Gris", "Pedale") 
 
 electric.generateCar()
-fuel.generateCar()
-diesel.generateCar()
-pedal.generateCar()
+electric.getBrand()
