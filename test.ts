@@ -1,9 +1,9 @@
 class Car {
-    public plate : string;
-    public seaters: number;
-    public brand: string;
-    public colour: string;
-    public carburant: string;
+    private plate : string;
+    private seaters: number;
+    private brand: string;
+    private colour: string;
+    private carburant: string;
 
     constructor(plate: string, seaters: number, brand: string, colour: string, carburant: string){
         this.plate = plate;
@@ -20,6 +20,22 @@ class Car {
         console.log(`Ma voiture est : ${this.colour}`)
         console.log(`Ma voiture est : ${this.carburant}`)
     } 
+
+    public setPlate = (plate: string) => {
+        this.plate = plate
+    }
+    public setSeaters = (seaters: number) => {
+        this.seaters = seaters
+    }
+    public setBrand = (brand: string) => {
+        this.brand = brand
+    }
+    public setColour = (colour: string) => {
+        this.colour = colour
+    }
+    public setCarburant = (carburant: string) => {
+        this.carburant = carburant
+    }
 }
 
 class electricCar extends Car {
